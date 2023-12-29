@@ -11,7 +11,7 @@ root.render(
       <div
         style={{
           backgroundColor: "#131515",
-          width: "100%",
+          minWidth: "100%",
           minHeight: "100%",
           position: "absolute",
         }}
