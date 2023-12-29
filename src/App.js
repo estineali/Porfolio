@@ -1,18 +1,13 @@
 import { useEffect } from "react";
 import WebFont from "webfontloader";
 
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import firebaseConfig from "./firebase";
-
 function App() {
-  const fontStyle = "Chilanka";
+  const fontStyle = "Encode Sans";
 
   useEffect(() => {
-    initializeApp(firebaseConfig);
     WebFont.load({
       google: {
-        families: ["Droid Sans", "Chilanka", "Permanent Marker"],
+        families: ["Encode Sans", "Droid Sans"],
       },
     });
   }, []);
@@ -21,51 +16,47 @@ function App() {
     <div
       style={{
         flexDirection: "column",
-        backgroundColor: "navy",
+        backgroundColor: colorpalette.night,
         width: "100%",
         height: "100%",
         position: "absolute",
+        alignContent: "flex-start",
       }}
     >
       <h1
         style={{
           fontFamily: fontStyle,
-          fontSize: 32,
-          textAlign: "center",
-          padding: 20,
-          color: "white",
+          fontSize: 30,
+          paddingLeft: 20,
+          color: colorpalette.hunyandi_yellow,
+          fontWeight: "bold",
         }}
       >
         M. Shahrom Ali
       </h1>
 
-      <h3
+      <p
         style={{
           fontFamily: fontStyle,
-          fontSize: 24,
-          textAlign: "center",
-          color: "smokewhite",
-          fontWeight: 100
+          fontSize: 18,
+          paddingLeft: 20,
+          color: colorpalette.anti_flash_white,
+          fontWeight: "lighter",
         }}
       >
-        Computer Scientist | Educational Games  
-      </h3>
-
-      {/* <a
-        style={{
-          fontFamily: fontStyle,
-          fontSize: "20",
-          paddingLeft: 10,
-          fontStyle: "italic",
-          color: "white",
-          fontWeight: "bold",
-        }}
-        href="https://firebasestorage.googleapis.com/v0/b/msa-eportfolio.appspot.com/o/Ali_HLD_2023.pdf?alt=media&token=82149df2-ce8e-4c04-9985-115cf27fcb5f"
-      >
-        High Level Design
-      </a> */}
+        Computer Scientist & Educational Games Researcher
+      </p>
     </div>
   );
 }
 
 export default App;
+
+const colorpalette = {
+  black: "#000000",
+  night: "#131515",
+  bittersweet_shimmer: "#C83E4D",
+  hunyandi_yellow: "#E09F3E",
+  anti_flash_white: "#EEEEEE",
+  white: "#FFFFFF",
+};
