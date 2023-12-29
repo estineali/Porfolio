@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import DataContext from "./contexts/DataContext";
 import Header from "./components/Header";
-const FONTSTYLE = "Encode Sans";
 
 const Home = (props) => {
   const DataC = useContext(DataContext);

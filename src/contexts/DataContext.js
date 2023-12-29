@@ -22,7 +22,9 @@ export const DataProvider = (props) => {
     white: "#FFFFFF",
   };
   return (
-    <DataContext.Provider value={{ ColorPalette, darkMode, setDarkMode }}>
+    <DataContext.Provider
+      value={{ FontFamily: "Encode Sans", ColorPalette, darkMode, setDarkMode }}
+    >
       {props.children}
     </DataContext.Provider>
   );

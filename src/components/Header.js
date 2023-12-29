@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import DataContext from "../contexts/DataContext";
-const FONTSTYLE = "Encode Sans";
 
 const Header = (props) => {
   return (
@@ -25,7 +24,7 @@ const Title = () => {
     <div>
       <h1
         style={{
-          fontFamily: FONTSTYLE,
+          fontFamily: DataC.FontFamily,
           fontSize: 30,
           color: DataC.ColorPalette.hunyandi_yellow,
           fontWeight: "bold",
@@ -36,7 +35,7 @@ const Title = () => {
 
       <p
         style={{
-          fontFamily: FONTSTYLE,
+          fontFamily: DataC.FontFamily,
           fontSize: 18,
           color: DataC.ColorPalette.anti_flash_white,
           fontWeight: "lighter",
@@ -68,6 +67,7 @@ const NavigationBar = (props) => {
       <NavBarItem label={"Blog"} />
       <NavBarItem label={"Contact"} />
       <NavBarItem label={"Resume"} />
+      <NavBarItem label={"About"} />
       <NavBarItem label={"Light Mode"} lastItem />
     </div>
   );
@@ -79,7 +79,7 @@ const NavBarItem = (props) => {
   return (
     <h2
       style={{
-        fontFamily: FONTSTYLE,
+        fontFamily: DataC.FontFamily,
         fontSize: 18,
         color: props.color ?? DataC.ColorPalette.anti_flash_white,
         fontWeight: "bold",
