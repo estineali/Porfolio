@@ -1,62 +1,32 @@
-import { useEffect } from "react";
-import WebFont from "webfontloader";
+import React, { useContext } from "react";
+import DataContext from "./contexts/DataContext";
+import Header from "./components/Header";
+const FONTSTYLE = "Encode Sans";
 
-function App() {
-  const fontStyle = "Encode Sans";
-
-  useEffect(() => {
-    WebFont.load({
-      google: {
-        families: ["Encode Sans", "Droid Sans"],
-      },
-    });
-  }, []);
-
+const Home = (props) => {
+  const DataC = useContext(DataContext);
   return (
-    <div
-      style={{
-        flexDirection: "column",
-        backgroundColor: colorpalette.night,
-        width: "100%",
-        height: "100%",
-        position: "absolute",
-        alignContent: "flex-start",
-      }}
-    >
-      <h1
-        style={{
-          fontFamily: fontStyle,
-          fontSize: 30,
-          paddingLeft: 20,
-          color: colorpalette.hunyandi_yellow,
-          fontWeight: "bold",
-        }}
-      >
-        M. Shahrom Ali
-      </h1>
-
+    <div>
       <p
         style={{
-          fontFamily: fontStyle,
-          fontSize: 18,
-          paddingLeft: 20,
-          color: colorpalette.anti_flash_white,
-          fontWeight: "lighter",
+          color: DataC.ColorPalette.white,
+          marginLeft: 20,
+          fontFamily: FONTSTYLE,
         }}
       >
-        Computer Scientist & Educational Games Researcher
+        Hello World
       </p>
     </div>
   );
-}
+};
+
+const App = () => {
+  return (
+    <React.Fragment>
+      <Header />
+      <Home />
+    </React.Fragment>
+  );
+};
 
 export default App;
-
-const colorpalette = {
-  black: "#000000",
-  night: "#131515",
-  bittersweet_shimmer: "#C83E4D",
-  hunyandi_yellow: "#E09F3E",
-  anti_flash_white: "#EEEEEE",
-  white: "#FFFFFF",
-};
