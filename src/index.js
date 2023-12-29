@@ -12,7 +12,7 @@ root.render(
         style={{
           backgroundColor: "#131515",
           width: "100%",
-          height: "100%",
+          minHeight: "100%",
           position: "absolute",
         }}
       >
