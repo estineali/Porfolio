@@ -1,29 +1,18 @@
 import React, { useContext } from "react";
 import DataContext from "./contexts/DataContext";
 import Header from "./components/Header";
+import Home from "./views/Home";
 
-const Home = (props) => {
+const Body = (props) => {
   const DataC = useContext(DataContext);
-  return (
-    <div>
-      <p
-        style={{
-          color: DataC.ColorPalette.white,
-          marginLeft: 20,
-          fontFamily: FONTSTYLE,
-        }}
-      >
-        Hello World
-      </p>
-    </div>
-  );
+  return <Home />;
 };
 
 const App = () => {
   return (
     <React.Fragment>
       <Header />
-      <Home />
+      <Body />
     </React.Fragment>
   );
 };
